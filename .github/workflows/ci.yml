@@ -23,18 +23,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: age-app/package-lock.json
+        cache-dependency-path: package-lock.json
     
     - name: Install dependencies
-      working-directory: ./age-app
       run: make install
-    
+
     - name: Run ESLint
-      working-directory: ./age-app
       run: make lint
-    
+
     - name: Build application
-      working-directory: ./age-app
       run: make build
     
     - name: Upload build artifacts
@@ -42,5 +39,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-files
-        path: age-app/.next/
+        path: .next/
         retention-days: 7

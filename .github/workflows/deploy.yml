@@ -18,14 +18,12 @@ jobs:
       with:
         node-version: '20.x'
         cache: 'npm'
-        cache-dependency-path: age-app/package-lock.json
+        cache-dependency-path: package-lock.json
     
     - name: Install dependencies
-      working-directory: ./age-app
       run: make install
-    
+
     - name: Build application
-      working-directory: ./age-app
       run: make build
     
     # Uncomment and configure for your deployment target
@@ -36,7 +34,7 @@ jobs:
     #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
     #     vercel-org-id: ${{ secrets.ORG_ID }}
     #     vercel-project-id: ${{ secrets.PROJECT_ID }}
-    #     working-directory: ./age-app
+    #     working-directory: ./
     
     # Example for GitHub Pages:
     # - name: Setup Pages
@@ -45,7 +43,7 @@ jobs:
     # - name: Upload to GitHub Pages
     #   uses: actions/upload-pages-artifact@v3
     #   with:
-    #     path: age-app/out
+    #     path: out
     # 
     # - name: Deploy to GitHub Pages
     #   id: deployment
