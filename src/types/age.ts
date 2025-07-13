@@ -55,56 +55,56 @@ export const TIME_UNITS: TimeUnit[] = [
   // Basic units
   {
     id: 'seconds',
-    name: 'Sekundy',
-    description: 'Jednotky času (1/86400 dne)',
+    name: 'Seconds',
+    description: 'Time units (1/86400 of a day)',
     category: 'basic',
-    conversionToDays: 1 / (24 * 60 * 60), // 1 sekunda = 1/86400 dne
+    conversionToDays: 1 / (24 * 60 * 60), // 1 second = 1/86400 day
     icon: '⏱️'
   },
   {
     id: 'minutes',
-    name: 'Minuty',
-    description: 'Jednotky času (1/1440 dne)',
+    name: 'Minutes',
+    description: 'Time units (1/1440 of a day)',
     category: 'basic',
-    conversionToDays: 1 / (24 * 60), // 1 minuta = 1/1440 dne
+    conversionToDays: 1 / (24 * 60), // 1 minute = 1/1440 day
     icon: '⏲️'
   },
   {
     id: 'hours',
-    name: 'Hodiny',
-    description: 'Jednotky času (1/24 dne)',
+    name: 'Hours',
+    description: 'Time units (1/24 of a day)',
     category: 'basic',
-    conversionToDays: 1 / 24, // 1 hodina = 1/24 dne
+    conversionToDays: 1 / 24, // 1 hour = 1/24 day
     icon: '🕒'
   },
   {
     id: 'days',
-    name: 'Dny',
-    description: 'Standardní dny',
+    name: 'Days',
+    description: 'Standard days',
     category: 'basic',
     conversionToDays: 1,
     icon: '📅'
   },
   {
     id: 'weeks',
-    name: 'Týdny',
-    description: 'Sedmidenní období',
+    name: 'Weeks',
+    description: '7-day periods',
     category: 'basic',
     conversionToDays: 7,
     icon: '📆'
   },
   {
     id: 'months',
-    name: 'Měsíce',
-    description: 'Průměrný měsíc (30.44 dne)',
+    name: 'Months',
+    description: 'Average month (30.44 days)',
     category: 'basic',
     conversionToDays: 30.44,
     icon: '🗓️'
   },
   {
     id: 'years',
-    name: 'Roky',
-    description: 'Kalendářní roky',
+    name: 'Years',
+    description: 'Calendar years',
     category: 'basic',
     conversionToDays: 365.25,
     icon: '🎂'
@@ -113,32 +113,32 @@ export const TIME_UNITS: TimeUnit[] = [
   // Biological units
   {
     id: 'heartbeats',
-    name: 'Srdeční tepy',
-    description: '70 tepů za minutu',
+    name: 'Heartbeats',
+    description: '70 beats per minute',
     category: 'biological',
-    conversionToDays: 1 / (70 * 60 * 24), // 1 tep = 1/(70*60*24) dne
+    conversionToDays: 1 / (70 * 60 * 24), // 1 beat = 1/(70*60*24) day
     icon: '💓'
   },
   {
     id: 'breaths',
-    name: 'Nádechy',
-    description: '16 nádechů za minutu',
+    name: 'Breaths',
+    description: '16 breaths per minute',
     category: 'biological',
     conversionToDays: 1 / (16 * 60 * 24),
     icon: '🫁'
   },
   {
     id: 'blinks',
-    name: 'Mrknutí',
-    description: '15 mrknutí za minutu',
+    name: 'Blinks',
+    description: '15 blinks per minute',
     category: 'biological',
     conversionToDays: 1 / (15 * 60 * 24),
     icon: '👁️'
   },
   {
     id: 'steps',
-    name: 'Kroky',
-    description: '8000 kroků denně',
+    name: 'Steps',
+    description: '8000 steps daily',
     category: 'biological',
     conversionToDays: 1 / 8000,
     icon: '👣'
@@ -147,24 +147,24 @@ export const TIME_UNITS: TimeUnit[] = [
   // Cosmic units
   {
     id: 'moon_cycles',
-    name: 'Úplňky',
-    description: 'Lunární cykly (29.53 dne)',
+    name: 'Full moons',
+    description: 'Lunar cycles (29.53 days)',
     category: 'cosmic',
     conversionToDays: 29.53,
     icon: '🌕'
   },
   {
     id: 'light_distance',
-    name: 'Světelné roky',
-    description: 'Vzdálenost světla za rok',
+    name: 'Light years',
+    description: 'Distance light travels in a year',
     category: 'cosmic',
-    conversionToDays: 365.25, // Pro výpočet vzdálenosti
+    conversionToDays: 365.25, // For distance calculation
     icon: '✨'
   },
   {
     id: 'earth_rotations',
-    name: 'Otočky Země',
-    description: 'Rotace Země kolem osy',
+    name: 'Earth rotations',
+    description: 'Earth rotation around axis',
     category: 'cosmic',
     conversionToDays: 1,
     icon: '🌍'
@@ -173,96 +173,96 @@ export const TIME_UNITS: TimeUnit[] = [
   // Cultural/Fun units
   {
     id: 'pizzas',
-    name: 'Pizzy snězené',
-    description: '1 pizza týdně',
+    name: 'Pizzas eaten',
+    description: '1 pizza per week',
     category: 'fun',
-    conversionToDays: 7, // 1 pizza = 7 dní
+    conversionToDays: 7, // 1 pizza = 7 days
     icon: '🍕'
   },
   {
     id: 'coffee_cups',
-    name: 'Šálky kávy',
-    description: '2 šálky denně',
+    name: 'Coffee cups',
+    description: '2 cups daily',
     category: 'fun',
     conversionToDays: 1 / 2,
     icon: '☕'
   },
   {
     id: 'netflix_episodes',
-    name: 'Netflix epizody',
-    description: '45min epizoda denně',
+    name: 'Netflix episodes',
+    description: '45min episode daily',
     category: 'cultural',
-    conversionToDays: 1, // 1 epizoda = 1 den
+    conversionToDays: 1, // 1 episode = 1 day
     icon: '📺'
   },
   {
     id: 'tiktok_videos',
-    name: 'TikTok videa',
-    description: '30s video, 50 denně',
+    name: 'TikTok videos',
+    description: '30s video, 50 daily',
     category: 'cultural',
     conversionToDays: 1 / 50,
     icon: '📱'
   },
   {
     id: 'books_read',
-    name: 'Přečtené knihy',
-    description: '1 kniha za měsíc',
+    name: 'Books read',
+    description: '1 book per month',
     category: 'cultural',
     conversionToDays: 30,
     icon: '📚'
   },
   {
     id: 'songs_listened',
-    name: 'Poslechnuté písně',
-    description: '3min píseň, 20 denně',
+    name: 'Songs listened',
+    description: '3min song, 20 daily',
     category: 'cultural',
     conversionToDays: 1 / 20,
     icon: '🎵'
   },
   {
     id: 'memes_seen',
-    name: 'Viděné memy',
-    description: '100 memů denně',
+    name: 'Memes seen',
+    description: '100 memes daily',
     category: 'fun',
     conversionToDays: 1 / 100,
     icon: '😂'
   },
   {
     id: 'instagram_posts',
-    name: 'Instagram posty',
-    description: '1 post za 3 dny',
+    name: 'Instagram posts',
+    description: '1 post per 3 days',
     category: 'cultural',
     conversionToDays: 3,
     icon: '📸'
   },
   {
     id: 'video_games_hours',
-    name: 'Hodiny hraní her',
-    description: '2 hodiny denně',
+    name: 'Gaming hours',
+    description: '2 hours daily',
     category: 'fun',
-    conversionToDays: 1 / 2, // 1 hodina = 0.5 dne
+    conversionToDays: 1 / 2, // 1 hour = 0.5 day
     icon: '🎮'
   },
   {
     id: 'toilet_visits',
-    name: 'Návštěvy WC',
-    description: '6 návštěv denně',
+    name: 'Toilet visits',
+    description: '6 visits daily',
     category: 'biological',
     conversionToDays: 1 / 6,
     icon: '🚽'
   },
   {
     id: 'laughs',
-    name: 'Smíchy',
-    description: '15 smíchů denně',
+    name: 'Laughs',
+    description: '15 laughs daily',
     category: 'fun',
     conversionToDays: 1 / 15,
     icon: '😄'
   },
   {
     id: 'yawns',
-    name: 'Zívnutí',
-    description: '8 zívnutí denně',
+    name: 'Yawns',
+    description: '8 yawns daily',
     category: 'biological',
     conversionToDays: 1 / 8,
     icon: '🥱'

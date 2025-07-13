@@ -74,16 +74,25 @@ export function calculateTotalDays(birthDate: Date, currentDate: Date = new Date
 }
 
 /**
- * Format large numbers with thousands separators (spaces)
+ * Format large numbers with thousands separators with locale support
  */
-export function formatLargeNumber(num: number): string {
-  return Math.floor(num).toLocaleString('cs-CZ').replace(/,/g, ' ');
+export function formatLargeNumber(num: number, locale: string = 'cs'): string {
+  // Map our locale codes to browser locale codes
+  const localeMap: Record<string, string> = {
+    'cs': 'cs-CZ',
+    'en': 'en-US',
+    'de': 'de-DE',
+    'ja': 'ja-JP'
+  };
+
+  const browserLocale = localeMap[locale] || locale;
+  return Math.floor(num).toLocaleString(browserLocale);
 }
 
 /**
  * Calculate special units for a given time period
  */
-export function calculateSpecialUnits(totalDays: number): SpecialUnitCalculation[] {
+export function calculateSpecialUnits(totalDays: number, locale: string = 'cs'): SpecialUnitCalculation[] {
   return TIME_UNITS.map(unit => {
     let value: number;
     
@@ -149,9 +158,9 @@ export function calculateSpecialUnits(totalDays: number): SpecialUnitCalculation
     return {
       unit,
       value,
-      formattedValue: unit.id === 'light_distance' 
-        ? `${formatLargeNumber(value)} km` 
-        : formatLargeNumber(value)
+      formattedValue: unit.id === 'light_distance'
+        ? `${formatLargeNumber(value, locale)} km`
+        : formatLargeNumber(value, locale)
     };
   });
 }
@@ -159,10 +168,10 @@ export function calculateSpecialUnits(totalDays: number): SpecialUnitCalculation
 /**
  * Calculate complete age result
  */
-export function calculateAgeResult(birthDate: Date, currentDate: Date = new Date()): AgeResult {
+export function calculateAgeResult(birthDate: Date, currentDate: Date = new Date(), locale: string = 'cs'): AgeResult {
   const basic = calculateAge(birthDate, currentDate);
   const totalDays = calculateTotalDays(birthDate, currentDate);
-  const special = calculateSpecialUnits(totalDays);
+  const special = calculateSpecialUnits(totalDays, locale);
   
   return {
     birthDate,
@@ -176,9 +185,10 @@ export function calculateAgeResult(birthDate: Date, currentDate: Date = new Date
  * Calculate interval result
  */
 export function calculateIntervalResult(
-  birthDate: Date, 
-  intervalValue: number, 
-  unitId: string
+  birthDate: Date,
+  intervalValue: number,
+  unitId: string,
+  locale: string = 'cs'
 ): IntervalResult | null {
   const unit = getUnitById(unitId);
   if (!unit) return null;
@@ -244,7 +254,7 @@ export function calculateIntervalResult(
   const ageAtTarget = calculateAge(birthDate, targetDate);
   
   // Calculate special units for the interval
-  const special = calculateSpecialUnits(intervalDays);
+  const special = calculateSpecialUnits(intervalDays, locale);
   
   return {
     interval: intervalValue,
@@ -272,10 +282,20 @@ export function parseBirthDateTime(dateStr: string, timeStr?: string): Date {
 }
 
 /**
- * Format date for display
+ * Format date for display with locale support
  */
-export function formatDate(date: Date): string {
-  return date.toLocaleDateString('cs-CZ', {
+export function formatDate(date: Date, locale: string = 'cs-CZ'): string {
+  // Map our locale codes to browser locale codes
+  const localeMap: Record<string, string> = {
+    'cs': 'cs-CZ',
+    'en': 'en-US',
+    'de': 'de-DE',
+    'ja': 'ja-JP'
+  };
+
+  const browserLocale = localeMap[locale] || locale;
+
+  return date.toLocaleDateString(browserLocale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

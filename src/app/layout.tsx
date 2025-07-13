@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Age Calculator - Kalkulačka věku",
-  description: "Zjistěte, jak dlouho jste na světě v různých jednotkách - od srdečních tepů po snězené pizzy!",
+  title: "Age Calculator - Calculate Your Age in Various Units",
+  description: "Find out how long you've been in the world in various units - from heartbeats to eaten pizzas! Support for multiple languages.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,121 @@
+{
+  "common": {
+    "back": "← Back to selection",
+    "calculating": "Calculating...",
+    "error": "Error calculating. Please check the entered values."
+  },
+  "header": {
+    "title": "⏰ Age Calculator",
+    "subtitle": "Find out how long you've been in the world in various units - from heartbeats to eaten pizzas!"
+  },
+  "menu": {
+    "title": "What would you like to calculate?",
+    "subtitle": "Choose one of the options below",
+    "age": {
+      "title": "My current age",
+      "description": "Enter your birth date and find out how long you've been in the world in all possible units.",
+      "features": [
+        "✨ Years, months, weeks, days, hours, minutes, seconds",
+        "🫀 Heartbeats, breaths, blinks",
+        "🌙 Moon phases, seasons, solar eclipses",
+        "🎭 Movies watched, books read, songs heard",
+        "🍕 Pizzas eaten, coffees drunk, steps taken"
+      ]
+    },
+    "interval": {
+      "title": "Future milestones",
+      "description": "Find out when you'll reach a specific number in any unit. When will you live 10,000 days?",
+      "features": [
+        "🎯 When will I be 10,000 days old?",
+        "💓 When will my heart beat for the billionth time?",
+        "🌕 When will I see the 500th full moon?"
+      ]
+    }
+  },
+  "ageForm": {
+    "title": "🎂 Your age",
+    "birthDate": "Birth date",
+    "birthTime": "Birth time (optional)",
+    "calculate": "📊 Calculate age"
+  },
+  "intervalForm": {
+    "title": "🎯 Future milestones",
+    "birthDate": "Birth date",
+    "birthTime": "Birth time (optional)",
+    "intervalValue": "Target value",
+    "selectUnit": "Select unit",
+    "calculate": "📅 Calculate interval"
+  },
+  "results": {
+    "ageTitle": "📊 Your age",
+    "ageAtDateTitle": "📊 Your age at this date",
+    "basicUnits": "📅 Basic units",
+    "biologicalUnits": "🫀 Biological units",
+    "cosmicUnits": "🌌 Cosmic units",
+    "culturalUnits": "🎭 Cultural units",
+    "funUnits": "🎉 Fun units",
+    "intervalTitle": "🎯 Target date",
+    "intervalDescription": "You will reach {value} {unit} on:",
+    "timeFromNow": "That's {time} from now",
+    "timeAgo": "That was {time} ago"
+  },
+  "units": {
+    "years": "years",
+    "months": "months", 
+    "weeks": "weeks",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
+  },
+  "timeUnits": {
+    "seconds": "Seconds",
+    "minutes": "Minutes",
+    "hours": "Hours",
+    "days": "Days",
+    "weeks": "Weeks",
+    "months": "Months",
+    "years": "Years",
+    "heartbeats": "Heartbeats",
+    "breaths": "Breaths",
+    "blinks": "Blinks",
+    "steps": "Steps",
+    "sleepCycles": "Sleep cycles",
+    "yawns": "Yawns",
+    "moonPhases": "Moon phases",
+    "seasons": "Seasons",
+    "solarEclipses": "Solar eclipses",
+    "lunarEclipses": "Lunar eclipses",
+    "movies": "Movies",
+    "books": "Books",
+    "songs": "Songs",
+    "pizzas": "Pizzas",
+    "coffees": "Coffees",
+    "laughs": "Laughs"
+  },
+  "timeUnitDescriptions": {
+    "seconds": "Time units (1/86400 of a day)",
+    "minutes": "Time units (1/1440 of a day)",
+    "hours": "Time units (1/24 of a day)",
+    "days": "Standard days",
+    "weeks": "7-day periods",
+    "months": "Average 30.44 days",
+    "years": "365.25 days",
+    "heartbeats": "70 beats per minute",
+    "breaths": "16 breaths per minute",
+    "blinks": "17,000 blinks per day",
+    "steps": "7,500 steps per day",
+    "sleepCycles": "5 cycles per night",
+    "yawns": "8 yawns per day",
+    "moonPhases": "29.53 days per cycle",
+    "seasons": "3 months per season",
+    "solarEclipses": "Every 375 days on average",
+    "lunarEclipses": "Every 2.5 years on average",
+    "movies": "2 movies per month",
+    "books": "1 book per month",
+    "songs": "50 songs per day",
+    "pizzas": "1 pizza per week",
+    "coffees": "2 coffees per day",
+    "laughs": "15 laughs per day"
+  }
+}

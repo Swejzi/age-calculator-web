@@ -1,0 +1,121 @@
+{
+  "common": {
+    "back": "← 選択に戻る",
+    "calculating": "計算中...",
+    "error": "計算エラーです。入力値を確認してください。"
+  },
+  "header": {
+    "title": "⏰ 年齢計算機",
+    "subtitle": "心拍数から食べたピザまで、様々な単位であなたがこの世にいる時間を調べましょう！"
+  },
+  "menu": {
+    "title": "何を計算しますか？",
+    "subtitle": "以下のオプションから選択してください",
+    "age": {
+      "title": "現在の年齢",
+      "description": "生年月日を入力して、あらゆる単位であなたがこの世にいる時間を調べましょう。",
+      "features": [
+        "✨ 年、月、週、日、時間、分、秒",
+        "🫀 心拍数、呼吸、まばたき",
+        "🌙 月の満ち欠け、季節、日食",
+        "🎭 観た映画、読んだ本、聞いた歌",
+        "🍕 食べたピザ、飲んだコーヒー、歩いた歩数"
+      ]
+    },
+    "interval": {
+      "title": "未来のマイルストーン",
+      "description": "任意の単位で特定の数値に達する時期を調べましょう。10,000日生きるのはいつ？",
+      "features": [
+        "🎯 10,000日になるのはいつ？",
+        "💓 心臓が10億回目の鼓動をするのはいつ？",
+        "🌕 500回目の満月を見るのはいつ？"
+      ]
+    }
+  },
+  "ageForm": {
+    "title": "🎂 あなたの年齢",
+    "birthDate": "生年月日",
+    "birthTime": "出生時刻（任意）",
+    "calculate": "📊 年齢を計算"
+  },
+  "intervalForm": {
+    "title": "🎯 未来のマイルストーン",
+    "birthDate": "生年月日",
+    "birthTime": "出生時刻（任意）",
+    "intervalValue": "目標値",
+    "selectUnit": "単位を選択",
+    "calculate": "📅 間隔を計算"
+  },
+  "results": {
+    "ageTitle": "📊 あなたの年齢",
+    "ageAtDateTitle": "📊 この日のあなたの年齢",
+    "basicUnits": "📅 基本単位",
+    "biologicalUnits": "🫀 生物学的単位",
+    "cosmicUnits": "🌌 宇宙的単位",
+    "culturalUnits": "🎭 文化的単位",
+    "funUnits": "🎉 楽しい単位",
+    "intervalTitle": "🎯 目標日",
+    "intervalDescription": "{value} {unit}に達するのは：",
+    "timeFromNow": "今から{time}後です",
+    "timeAgo": "{time}前でした"
+  },
+  "units": {
+    "years": "年",
+    "months": "ヶ月",
+    "weeks": "週",
+    "days": "日",
+    "hours": "時間",
+    "minutes": "分",
+    "seconds": "秒"
+  },
+  "timeUnits": {
+    "seconds": "秒",
+    "minutes": "分",
+    "hours": "時間",
+    "days": "日",
+    "weeks": "週",
+    "months": "月",
+    "years": "年",
+    "heartbeats": "心拍",
+    "breaths": "呼吸",
+    "blinks": "まばたき",
+    "steps": "歩数",
+    "sleepCycles": "睡眠サイクル",
+    "yawns": "あくび",
+    "moonPhases": "月の満ち欠け",
+    "seasons": "季節",
+    "solarEclipses": "日食",
+    "lunarEclipses": "月食",
+    "movies": "映画",
+    "books": "本",
+    "songs": "歌",
+    "pizzas": "ピザ",
+    "coffees": "コーヒー",
+    "laughs": "笑い"
+  },
+  "timeUnitDescriptions": {
+    "seconds": "時間単位（1日の1/86400）",
+    "minutes": "時間単位（1日の1/1440）",
+    "hours": "時間単位（1日の1/24）",
+    "days": "標準日",
+    "weeks": "7日間",
+    "months": "平均30.44日",
+    "years": "365.25日",
+    "heartbeats": "毎分70回",
+    "breaths": "毎分16回",
+    "blinks": "1日17,000回",
+    "steps": "1日7,500歩",
+    "sleepCycles": "1晩5サイクル",
+    "yawns": "1日8回",
+    "moonPhases": "1サイクル29.53日",
+    "seasons": "1季節3ヶ月",
+    "solarEclipses": "平均375日ごと",
+    "lunarEclipses": "平均2.5年ごと",
+    "movies": "月2本",
+    "books": "月1冊",
+    "songs": "1日50曲",
+    "pizzas": "週1枚",
+    "coffees": "1日2杯",
+    "laughs": "1日15回"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "common": {
+    "back": "← Zpět na výběr",
+    "calculating": "Počítám...",
+    "error": "Chyba při výpočtu. Zkontrolujte zadané hodnoty."
+  },
+  "header": {
+    "title": "⏰ Kalkulačka věku",
+    "subtitle": "Zjistěte, jak dlouho jste na světě v různých jednotkách - od srdečních tepů po snězené pizzy!"
+  },
+  "menu": {
+    "title": "Co chcete spočítat?",
+    "subtitle": "Vyberte si jednu z možností níže",
+    "age": {
+      "title": "Můj aktuální věk",
+      "description": "Zadejte datum narození a zjistěte, jak dlouho jste na světě ve všech možných jednotkách.",
+      "features": [
+        "✨ Roky, měsíce, týdny, dny, hodiny, minuty, sekundy",
+        "🫀 Srdeční tepy, nádechy, mrknutí",
+        "🌙 Fáze měsíce, roční období, zatmění slunce",
+        "🎭 Zhlédnuté filmy, přečtené knihy, slyšené písně",
+        "🍕 Snězené pizzy, vypité kávy, udělané kroky"
+      ]
+    },
+    "interval": {
+      "title": "Budoucí milníky",
+      "description": "Zjistěte, kdy dosáhnete konkrétního čísla v jakékoli jednotce. Kdy budete žít 10 000 dní?",
+      "features": [
+        "🎯 Kdy mi bude 10 000 dní?",
+        "💓 Kdy mi bude bít srdce miliardtý tep?",
+        "🌕 Kdy uvidím 500. úplněk?"
+      ]
+    }
+  },
+  "ageForm": {
+    "title": "🎂 Váš věk",
+    "birthDate": "Datum narození",
+    "birthTime": "Čas narození (volitelné)",
+    "calculate": "📊 Spočítat věk"
+  },
+  "intervalForm": {
+    "title": "🎯 Budoucí milníky",
+    "birthDate": "Datum narození",
+    "birthTime": "Čas narození (volitelné)",
+    "intervalValue": "Cílová hodnota",
+    "selectUnit": "Vyberte jednotku",
+    "calculate": "📅 Spočítat interval"
+  },
+  "results": {
+    "ageTitle": "📊 Váš věk",
+    "ageAtDateTitle": "📊 Váš věk k tomuto datu",
+    "basicUnits": "📅 Základní jednotky",
+    "biologicalUnits": "🫀 Biologické jednotky",
+    "cosmicUnits": "🌌 Kosmické jednotky",
+    "culturalUnits": "🎭 Kulturní jednotky",
+    "funUnits": "🎉 Zábavné jednotky",
+    "intervalTitle": "🎯 Cílové datum",
+    "intervalDescription": "Dosáhnete {value} {unit} dne:",
+    "timeFromNow": "To je za {time}",
+    "timeAgo": "To bylo před {time}"
+  },
+  "units": {
+    "years": "let",
+    "months": "měsíců",
+    "weeks": "týdnů",
+    "days": "dní",
+    "hours": "hodin",
+    "minutes": "minut",
+    "seconds": "sekund"
+  },
+  "timeUnits": {
+    "seconds": "Sekundy",
+    "minutes": "Minuty",
+    "hours": "Hodiny",
+    "days": "Dny",
+    "weeks": "Týdny",
+    "months": "Měsíce",
+    "years": "Roky",
+    "heartbeats": "Srdeční tepy",
+    "breaths": "Nádechy",
+    "blinks": "Mrknutí",
+    "steps": "Kroky",
+    "sleepCycles": "Spánkové cykly",
+    "yawns": "Zívnutí",
+    "moonPhases": "Fáze měsíce",
+    "seasons": "Roční období",
+    "solarEclipses": "Zatmění slunce",
+    "lunarEclipses": "Zatmění měsíce",
+    "movies": "Filmy",
+    "books": "Knihy",
+    "songs": "Písně",
+    "pizzas": "Pizzy",
+    "coffees": "Kávy",
+    "laughs": "Smíchy"
+  },
+  "timeUnitDescriptions": {
+    "seconds": "Jednotky času (1/86400 dne)",
+    "minutes": "Jednotky času (1/1440 dne)",
+    "hours": "Jednotky času (1/24 dne)",
+    "days": "Standardní dny",
+    "weeks": "7denní období",
+    "months": "Průměrně 30,44 dne",
+    "years": "365,25 dne",
+    "heartbeats": "70 tepů za minutu",
+    "breaths": "16 nádechů za minutu",
+    "blinks": "17 000 mrknutí denně",
+    "steps": "7 500 kroků denně",
+    "sleepCycles": "5 cyklů za noc",
+    "yawns": "8 zívnutí denně",
+    "moonPhases": "29,53 dne na cyklus",
+    "seasons": "3 měsíce na období",
+    "solarEclipses": "Každých 375 dní v průměru",
+    "lunarEclipses": "Každé 2,5 roku v průměru",
+    "movies": "2 filmy měsíčně",
+    "books": "1 kniha měsíčně",
+    "songs": "50 písní denně",
+    "pizzas": "1 pizza týdně",
+    "coffees": "2 kávy denně",
+    "laughs": "15 smíchů denně"
+  }
+}
