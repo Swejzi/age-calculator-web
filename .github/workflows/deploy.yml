@@ -1,0 +1,58 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        cache-dependency-path: age-app/package-lock.json
+    
+    - name: Install dependencies
+      working-directory: ./age-app
+      run: make install
+    
+    - name: Build application
+      working-directory: ./age-app
+      run: make build
+    
+    # Uncomment and configure for your deployment target
+    # Example for Vercel:
+    # - name: Deploy to Vercel
+    #   uses: amondnet/vercel-action@v25
+    #   with:
+    #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+    #     vercel-org-id: ${{ secrets.ORG_ID }}
+    #     vercel-project-id: ${{ secrets.PROJECT_ID }}
+    #     working-directory: ./age-app
+    
+    # Example for GitHub Pages:
+    # - name: Setup Pages
+    #   uses: actions/configure-pages@v4
+    # 
+    # - name: Upload to GitHub Pages
+    #   uses: actions/upload-pages-artifact@v3
+    #   with:
+    #     path: age-app/out
+    # 
+    # - name: Deploy to GitHub Pages
+    #   id: deployment
+    #   uses: actions/deploy-pages@v4
+    
+    - name: Deployment placeholder
+      run: |
+        echo "🚀 Build completed successfully!"
+        echo "Configure your deployment target in this workflow file."
+        echo "Available options: Vercel, Netlify, GitHub Pages, AWS S3, etc."
