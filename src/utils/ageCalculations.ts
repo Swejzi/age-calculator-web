@@ -1,25 +1,16 @@
-import { 
-  AgeCalculation, 
-  AgeResult, 
-  IntervalResult, 
-  SpecialUnitCalculation, 
-  TimeUnit, 
-  TIME_UNITS, 
-  getUnitById 
+import {
+  AgeCalculation,
+  AgeResult,
+  IntervalResult,
+  SpecialUnitCalculation,
+  TIME_UNITS,
+  getUnitById
 } from '@/types/age';
 
 /**
  * Calculate the difference between two dates in various units
  */
 export function calculateAge(birthDate: Date, currentDate: Date = new Date()): AgeCalculation {
-  const diffMs = currentDate.getTime() - birthDate.getTime();
-  
-  // Convert to basic units
-  const totalSeconds = Math.floor(diffMs / 1000);
-  const totalMinutes = Math.floor(totalSeconds / 60);
-  const totalHours = Math.floor(totalMinutes / 60);
-  const totalDays = Math.floor(totalHours / 24);
-  
   // Calculate years, months, weeks
   let years = currentDate.getFullYear() - birthDate.getFullYear();
   let months = currentDate.getMonth() - birthDate.getMonth();
