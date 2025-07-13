@@ -122,8 +122,40 @@ V pravém horním rohu výsledků najdete ovládací prvky:
 
 ## 🌟 Unikátní jednotky
 
-Aplikace obsahuje mnoho zábavných jednotek:
+Aplikace obsahuje mnoho fascinujících jednotek, zejména **rozšířenou kolekci kosmických jednotek**:
 
+### 🌌 Kosmické jednotky (NOVĚ ROZŠÍŘENO!)
+
+**Planetární roky:**
+- ☿️ **Merkurské roky** (88 dní)
+- ♀️ **Venuše roky** (225 dní)
+- ♂️ **Marsovské roky** (687 dní)
+- ♃ **Jupiterské roky** (4333 dní)
+- ♄ **Saturnské roky** (10759 dní)
+- ♅ **Uranské roky** (30687 dní)
+- ♆ **Neptunské roky** (60190 dní)
+- ♇ **Plutonské roky** (90560 dní)
+
+**Kosmické události:**
+- 🌕 **Úplňky** (každých 29.53 dne)
+- ☀️ **Sluneční erupce** (každých 11 let)
+- ☄️ **Halleyova kometa** (každých 76 let)
+- 🌠 **Meteorické roje** (měsíčně)
+- 🌑 **Cykly zatmění** (každých 375 let)
+- 💥 **Supernovy** (každých 50 let)
+- 🌌 **Galaktické rotace** (225 mil. let)
+
+**Vesmírné objekty:**
+- ✨ **Světelné roky** (vzdálenost světla)
+- 🌍 **Otočky Země** (denně)
+- ⭐ **Pulzy neutronových hvězd** (sekundy)
+- 🕳️ **Orbity černých děr** (16 let)
+- 🛰️ **Vzdálenost Voyageru** (denní pokrok)
+- 🛸 **Orbity ISS** (90 minut)
+- 🪨 **Setkání s asteroidy** (každé 2 roky)
+- 🚀 **Uražené světelné roky** (pohyb vesmírem)
+
+### 🫀 Biologické a zábavné jednotky
 - **🍕 Pizzy snězené** (1 týdně)
 - **☕ Šálky kávy** (2 denně)
 - **😂 Viděné memy** (100 denně)
@@ -131,8 +163,6 @@ Aplikace obsahuje mnoho zábavných jednotek:
 - **📱 TikTok videa** (50 denně)
 - **💓 Srdeční tepy** (70/min)
 - **🫁 Nádechy** (16/min)
-- **🌕 Úplňky** (každých 29.53 dne)
-- **✨ Světelné roky** (vzdálenost světla)
 - A mnoho dalších!
 
 ## 🎨 Design

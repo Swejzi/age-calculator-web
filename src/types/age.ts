@@ -169,6 +169,174 @@ export const TIME_UNITS: TimeUnit[] = [
     conversionToDays: 1,
     icon: '🌍'
   },
+  {
+    id: 'mercury_years',
+    name: 'Mercury years',
+    description: 'Mercury orbital period (88 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 88,
+    icon: '☿️'
+  },
+  {
+    id: 'venus_years',
+    name: 'Venus years',
+    description: 'Venus orbital period (225 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 225,
+    icon: '♀️'
+  },
+  {
+    id: 'mars_years',
+    name: 'Mars years',
+    description: 'Mars orbital period (687 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 687,
+    icon: '♂️'
+  },
+  {
+    id: 'jupiter_years',
+    name: 'Jupiter years',
+    description: 'Jupiter orbital period (4,333 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 4333,
+    icon: '♃'
+  },
+  {
+    id: 'saturn_years',
+    name: 'Saturn years',
+    description: 'Saturn orbital period (10,759 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 10759,
+    icon: '♄'
+  },
+  {
+    id: 'uranus_years',
+    name: 'Uranus years',
+    description: 'Uranus orbital period (30,687 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 30687,
+    icon: '♅'
+  },
+  {
+    id: 'neptune_years',
+    name: 'Neptune years',
+    description: 'Neptune orbital period (60,190 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 60190,
+    icon: '♆'
+  },
+  {
+    id: 'pluto_years',
+    name: 'Pluto years',
+    description: 'Pluto orbital period (90,560 Earth days)',
+    category: 'cosmic',
+    conversionToDays: 90560,
+    icon: '♇'
+  },
+  {
+    id: 'solar_flares',
+    name: 'Solar flares',
+    description: 'Major solar flares (every 11 years)',
+    category: 'cosmic',
+    conversionToDays: 11 * 365.25,
+    icon: '☀️'
+  },
+  {
+    id: 'halley_comet',
+    name: 'Halley\'s Comet visits',
+    description: 'Halley\'s Comet orbital period (76 years)',
+    category: 'cosmic',
+    conversionToDays: 76 * 365.25,
+    icon: '☄️'
+  },
+  {
+    id: 'galactic_rotations',
+    name: 'Galactic rotations',
+    description: 'Milky Way rotation (225-250 million years)',
+    category: 'cosmic',
+    conversionToDays: 225000000 * 365.25,
+    icon: '🌌'
+  },
+  {
+    id: 'light_years_traveled',
+    name: 'Light-years traveled',
+    description: 'Distance Earth travels through space',
+    category: 'cosmic',
+    conversionToDays: 365.25, // Earth travels ~1 light-year per year relative to galaxy
+    icon: '🚀'
+  },
+  {
+    id: 'asteroid_encounters',
+    name: 'Asteroid encounters',
+    description: 'Close asteroid approaches (every 2 years)',
+    category: 'cosmic',
+    conversionToDays: 2 * 365.25,
+    icon: '🪨'
+  },
+  {
+    id: 'meteor_showers',
+    name: 'Meteor showers',
+    description: 'Major meteor shower events (monthly)',
+    category: 'cosmic',
+    conversionToDays: 30.44,
+    icon: '🌠'
+  },
+  {
+    id: 'eclipse_cycles',
+    name: 'Eclipse cycles',
+    description: 'Solar eclipse visibility cycles (375 years)',
+    category: 'cosmic',
+    conversionToDays: 375 * 365.25,
+    icon: '🌑'
+  },
+  {
+    id: 'supernova_events',
+    name: 'Supernova events',
+    description: 'Supernova in our galaxy (every 50 years)',
+    category: 'cosmic',
+    conversionToDays: 50 * 365.25,
+    icon: '💥'
+  },
+  {
+    id: 'cosmic_background_shifts',
+    name: 'Cosmic background shifts',
+    description: 'Observable universe expansion (13.8 billion years)',
+    category: 'cosmic',
+    conversionToDays: 13800000000 * 365.25,
+    icon: '🌌'
+  },
+  {
+    id: 'neutron_star_pulses',
+    name: 'Neutron star pulses',
+    description: 'Pulsar rotation periods (milliseconds to seconds)',
+    category: 'cosmic',
+    conversionToDays: 1 / (24 * 60 * 60), // 1 second
+    icon: '⭐'
+  },
+  {
+    id: 'black_hole_orbits',
+    name: 'Black hole orbits',
+    description: 'Sagittarius A* orbital period (16 years)',
+    category: 'cosmic',
+    conversionToDays: 16 * 365.25,
+    icon: '🕳️'
+  },
+  {
+    id: 'voyager_distance',
+    name: 'Voyager distances',
+    description: 'Voyager 1 journey progress (daily)',
+    category: 'cosmic',
+    conversionToDays: 1,
+    icon: '🛰️'
+  },
+  {
+    id: 'iss_orbits',
+    name: 'ISS orbits',
+    description: 'International Space Station orbits (90 minutes)',
+    category: 'cosmic',
+    conversionToDays: 1 / 16, // 16 orbits per day
+    icon: '🛸'
+  },
 
   // Cultural/Fun units
   {

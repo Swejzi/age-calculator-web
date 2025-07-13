@@ -14,7 +14,16 @@ const unitNames = {
   cs: {
     seconds: 'Sekundy', minutes: 'Minuty', hours: 'Hodiny', days: 'Dny', weeks: 'Týdny', months: 'Měsíce', years: 'Roky',
     heartbeats: 'Srdeční tepy', breaths: 'Nádechy', blinks: 'Mrknutí', steps: 'Kroky', yawns: 'Zívnutí',
+    // Cosmic units
     moon_cycles: 'Úplňky', light_distance: 'Světelné roky', earth_rotations: 'Otočky Země',
+    mercury_years: 'Merkurské roky', venus_years: 'Venuše roky', mars_years: 'Marsovské roky',
+    jupiter_years: 'Jupiterské roky', saturn_years: 'Saturnské roky', uranus_years: 'Uranské roky',
+    neptune_years: 'Neptunské roky', pluto_years: 'Plutonské roky', solar_flares: 'Sluneční erupce',
+    halley_comet: 'Halleyova kometa', galactic_rotations: 'Galaktické rotace', light_years_traveled: 'Uražené světelné roky',
+    asteroid_encounters: 'Setkání s asteroidy', meteor_showers: 'Meteorické roje', eclipse_cycles: 'Cykly zatmění',
+    supernova_events: 'Supernovy', cosmic_background_shifts: 'Posun kosmického pozadí', neutron_star_pulses: 'Pulzy neutronových hvězd',
+    black_hole_orbits: 'Orbity černých děr', voyager_distance: 'Vzdálenost Voyageru', iss_orbits: 'Orbity ISS',
+    // Fun units
     pizzas: 'Pizzy snězené', coffee_cups: 'Šálky kávy', netflix_episodes: 'Netflix epizody', tiktok_videos: 'TikTok videa',
     books_read: 'Přečtené knihy', songs_listened: 'Poslechnuté písně', memes_seen: 'Viděné memy', instagram_posts: 'Instagram posty',
     video_games_hours: 'Hodiny hraní her', toilet_visits: 'Návštěvy WC', laughs: 'Smíchy'

@@ -15,7 +15,16 @@ const unitNames = {
   cs: {
     seconds: 'Sekundy', minutes: 'Minuty', hours: 'Hodiny', days: 'Dny', weeks: 'Týdny', months: 'Měsíce', years: 'Roky',
     heartbeats: 'Srdeční tepy', breaths: 'Nádechy', blinks: 'Mrknutí', steps: 'Kroky', yawns: 'Zívnutí',
+    // Cosmic units
     moon_cycles: 'Úplňky', light_distance: 'Světelné roky', earth_rotations: 'Otočky Země',
+    mercury_years: 'Merkurské roky', venus_years: 'Venuše roky', mars_years: 'Marsovské roky',
+    jupiter_years: 'Jupiterské roky', saturn_years: 'Saturnské roky', uranus_years: 'Uranské roky',
+    neptune_years: 'Neptunské roky', pluto_years: 'Plutonské roky', solar_flares: 'Sluneční erupce',
+    halley_comet: 'Halleyova kometa', galactic_rotations: 'Galaktické rotace', light_years_traveled: 'Uražené světelné roky',
+    asteroid_encounters: 'Setkání s asteroidy', meteor_showers: 'Meteorické roje', eclipse_cycles: 'Cykly zatmění',
+    supernova_events: 'Supernovy', cosmic_background_shifts: 'Posun kosmického pozadí', neutron_star_pulses: 'Pulzy neutronových hvězd',
+    black_hole_orbits: 'Orbity černých děr', voyager_distance: 'Vzdálenost Voyageru', iss_orbits: 'Orbity ISS',
+    // Fun units
     pizzas: 'Pizzy snězené', coffee_cups: 'Šálky kávy', netflix_episodes: 'Netflix epizody', tiktok_videos: 'TikTok videa',
     books_read: 'Přečtené knihy', songs_listened: 'Poslechnuté písně', memes_seen: 'Viděné memy', instagram_posts: 'Instagram posty',
     video_games_hours: 'Hodiny hraní her', toilet_visits: 'Návštěvy WC', laughs: 'Smíchy'
@@ -23,7 +32,16 @@ const unitNames = {
   en: {
     seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', weeks: 'Weeks', months: 'Months', years: 'Years',
     heartbeats: 'Heartbeats', breaths: 'Breaths', blinks: 'Blinks', steps: 'Steps', yawns: 'Yawns',
+    // Cosmic units
     moon_cycles: 'Full moons', light_distance: 'Light years', earth_rotations: 'Earth rotations',
+    mercury_years: 'Mercury years', venus_years: 'Venus years', mars_years: 'Mars years',
+    jupiter_years: 'Jupiter years', saturn_years: 'Saturn years', uranus_years: 'Uranus years',
+    neptune_years: 'Neptune years', pluto_years: 'Pluto years', solar_flares: 'Solar flares',
+    halley_comet: 'Halley\'s Comet visits', galactic_rotations: 'Galactic rotations', light_years_traveled: 'Light-years traveled',
+    asteroid_encounters: 'Asteroid encounters', meteor_showers: 'Meteor showers', eclipse_cycles: 'Eclipse cycles',
+    supernova_events: 'Supernova events', cosmic_background_shifts: 'Cosmic background shifts', neutron_star_pulses: 'Neutron star pulses',
+    black_hole_orbits: 'Black hole orbits', voyager_distance: 'Voyager distances', iss_orbits: 'ISS orbits',
+    // Fun units
     pizzas: 'Pizzas eaten', coffee_cups: 'Coffee cups', netflix_episodes: 'Netflix episodes', tiktok_videos: 'TikTok videos',
     books_read: 'Books read', songs_listened: 'Songs listened', memes_seen: 'Memes seen', instagram_posts: 'Instagram posts',
     video_games_hours: 'Gaming hours', toilet_visits: 'Toilet visits', laughs: 'Laughs'
