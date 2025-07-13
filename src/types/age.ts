@@ -155,8 +155,8 @@ export const TIME_UNITS: TimeUnit[] = [
   },
   {
     id: 'light_distance',
-    name: 'Light years',
-    description: 'Distance light travels in a year',
+    name: 'Light distance',
+    description: 'Distance light travels in your lifetime',
     category: 'cosmic',
     conversionToDays: 365.25, // For distance calculation
     icon: '✨'

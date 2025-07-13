@@ -14,7 +14,7 @@ type CalculationType = 'age' | 'interval' | null;
 const translations = {
   cs: {
     title: '⏰ Kalkulačka věku',
-    subtitle: 'Zjistěte, jak dlouho jste na světě v různých jednotkách - od srdečních tepů po snězené pizzy!',
+    subtitle: 'Zjistěte, jak dlouho jste na světě v různých jednotkách - od srdečních tepů po snězené pizzy! Nyní s živými čísly v reálném čase! ⚡',
     back: '← Zpět na výběr',
     menuTitle: 'Co chcete spočítat?',
     menuSubtitle: 'Vyberte si jednu z možností níže',
@@ -60,7 +60,7 @@ const translations = {
   },
   en: {
     title: '⏰ Age Calculator',
-    subtitle: 'Find out how long you\'ve been in the world in various units - from heartbeats to eaten pizzas!',
+    subtitle: 'Find out how long you\'ve been in the world in various units - from heartbeats to eaten pizzas! Now with live real-time numbers! ⚡',
     back: '← Back to selection',
     menuTitle: 'What would you like to calculate?',
     menuSubtitle: 'Choose one of the options below',

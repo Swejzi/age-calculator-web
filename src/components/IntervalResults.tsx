@@ -2,10 +2,12 @@
 
 import { IntervalResult } from '@/types/age';
 import { formatDate } from '@/utils/ageCalculations';
+import { useRealTimeInterval } from '@/hooks/useRealTimeAge';
 
 interface IntervalResultsProps {
   result: IntervalResult;
   locale: 'cs' | 'en' | 'de' | 'ja';
+  enableRealTime?: boolean;
 }
 
 // Unit name translations (same as in other components)
@@ -97,7 +99,9 @@ const intervalResultsTranslations = {
   ja: { targetDate: '🎯 目標日', yourAgeAtDate: '📊 この日のあなたの年齢', pastDateWarning: '⚠️ この日は既に過ぎています！', futureDate: '✅ この日は未来に起こります', forThisInterval: 'この間隔で', years: '年', months: 'ヶ月', weeks: '週', days: '日', hours: '時間', minutes: '分', seconds: '秒', basicUnits: '📅 基本単位', biologicalUnits: '🫀 生物学的単位', cosmicUnits: '🌌 宇宙的単位', culturalUnits: '🎭 文化的単位', funUnits: '🎉 楽しい単位' }
 };
 
-export function IntervalResults({ result, locale }: IntervalResultsProps) {
+export function IntervalResults({ result, locale, enableRealTime = true }: IntervalResultsProps) {
+  // For interval results, we keep the original calculation as the target date is fixed
+  // Real-time updates don't make sense for future milestones
   const { interval, unit, targetDate, ageAtTarget, special } = result;
   const t = intervalResultsTranslations[locale];
 

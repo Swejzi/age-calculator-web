@@ -103,6 +103,23 @@ src/
 4. Klikněte na "Spočítat interval"
 5. Uvidíte, kdy tento interval nastane a jaký budete mít věk
 
+## ⚡ Živá čísla v reálném čase
+
+Aplikace nyní podporuje **živé aktualizace** všech časových hodnot:
+
+- **Automatické aktualizace**: Všechna čísla se aktualizují každou sekundu
+- **Real-time zobrazení**: Sekundy, minuty, hodiny se zvyšují v reálném čase
+- **Ovládací prvky**: Možnost pozastavit/obnovit aktualizace
+- **Optimalizovaný výkon**: Inteligentní správa intervalů a cleanup
+
+### Ovládání živých čísel
+
+V pravém horním rohu výsledků najdete ovládací prvky:
+- ⚡ **Indikátor stavu**: Zelená tečka = aktualizuje se, červená = pozastaveno
+- ⏸️ **Pozastavit**: Zastaví real-time aktualizace
+- ▶️ **Obnovit**: Spustí real-time aktualizace
+- 🔄 **Aktualizovat nyní**: Okamžitá aktualizace
+
 ## 🌟 Unikátní jednotky
 
 Aplikace obsahuje mnoho zábavných jednotek:

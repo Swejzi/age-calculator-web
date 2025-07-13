@@ -2,10 +2,13 @@
 
 import { AgeResult } from '@/types/age';
 import { formatDate } from '@/utils/ageCalculations';
+import { useRealTimeAgeWithControls } from '@/hooks/useRealTimeAge';
+import { RealTimeControls } from './RealTimeControls';
 
 interface AgeResultsProps {
   result: AgeResult;
   locale: 'cs' | 'en' | 'de' | 'ja';
+  enableRealTime?: boolean;
 }
 
 // Unit name translations (same as in IntervalForm)
@@ -13,7 +16,7 @@ const unitNames = {
   cs: {
     seconds: 'Sekundy', minutes: 'Minuty', hours: 'Hodiny', days: 'Dny', weeks: 'Týdny', months: 'Měsíce', years: 'Roky',
     heartbeats: 'Srdeční tepy', breaths: 'Nádechy', blinks: 'Mrknutí', steps: 'Kroky', yawns: 'Zívnutí',
-    moon_cycles: 'Úplňky', light_distance: 'Světelné roky', earth_rotations: 'Otočky Země',
+    moon_cycles: 'Úplňky', light_distance: 'Vzdálenost světla', earth_rotations: 'Otočky Země',
     pizzas: 'Pizzy snězené', coffee_cups: 'Šálky kávy', netflix_episodes: 'Netflix epizody', tiktok_videos: 'TikTok videa',
     books_read: 'Přečtené knihy', songs_listened: 'Poslechnuté písně', memes_seen: 'Viděné memy', instagram_posts: 'Instagram posty',
     video_games_hours: 'Hodiny hraní her', toilet_visits: 'Návštěvy WC', laughs: 'Smíchy'
@@ -21,7 +24,7 @@ const unitNames = {
   en: {
     seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', weeks: 'Weeks', months: 'Months', years: 'Years',
     heartbeats: 'Heartbeats', breaths: 'Breaths', blinks: 'Blinks', steps: 'Steps', yawns: 'Yawns',
-    moon_cycles: 'Full moons', light_distance: 'Light years', earth_rotations: 'Earth rotations',
+    moon_cycles: 'Full moons', light_distance: 'Light distance', earth_rotations: 'Earth rotations',
     pizzas: 'Pizzas eaten', coffee_cups: 'Coffee cups', netflix_episodes: 'Netflix episodes', tiktok_videos: 'TikTok videos',
     books_read: 'Books read', songs_listened: 'Songs listened', memes_seen: 'Memes seen', instagram_posts: 'Instagram posts',
     video_games_hours: 'Gaming hours', toilet_visits: 'Toilet visits', laughs: 'Laughs'
@@ -29,7 +32,7 @@ const unitNames = {
   de: {
     seconds: 'Sekunden', minutes: 'Minuten', hours: 'Stunden', days: 'Tage', weeks: 'Wochen', months: 'Monate', years: 'Jahre',
     heartbeats: 'Herzschläge', breaths: 'Atemzüge', blinks: 'Blinzeln', steps: 'Schritte', yawns: 'Gähnen',
-    moon_cycles: 'Vollmonde', light_distance: 'Lichtjahre', earth_rotations: 'Erdumdrehungen',
+    moon_cycles: 'Vollmonde', light_distance: 'Lichtentfernung', earth_rotations: 'Erdumdrehungen',
     pizzas: 'Gegessene Pizzas', coffee_cups: 'Kaffeetassen', netflix_episodes: 'Netflix-Episoden', tiktok_videos: 'TikTok-Videos',
     books_read: 'Gelesene Bücher', songs_listened: 'Gehörte Lieder', memes_seen: 'Gesehene Memes', instagram_posts: 'Instagram-Posts',
     video_games_hours: 'Spielstunden', toilet_visits: 'Toilettenbesuche', laughs: 'Lachen'
@@ -117,8 +120,23 @@ const resultsTranslations = {
   }
 };
 
-export function AgeResults({ result, locale }: AgeResultsProps) {
-  const { basic, special, birthDate, currentDate } = result;
+export function AgeResults({ result, locale, enableRealTime = true }: AgeResultsProps) {
+  // Use real-time age calculation with controls if enabled, otherwise use the provided result
+  const {
+    ageResult: realTimeResult,
+    isUpdating,
+    pause,
+    resume,
+    forceUpdate
+  } = useRealTimeAgeWithControls(
+    enableRealTime ? result.birthDate : null,
+    locale,
+    1000, // Update every second
+    false // Start with updates enabled
+  );
+
+  const activeResult = enableRealTime && realTimeResult ? realTimeResult : result;
+  const { basic, special, birthDate, currentDate } = activeResult;
   const t = resultsTranslations[locale];
 
   // Group special units by category
@@ -141,11 +159,34 @@ export function AgeResults({ result, locale }: AgeResultsProps) {
 
   return (
     <div className="space-y-6">
+      {/* Real-time Controls */}
+      {enableRealTime && (
+        <div className="flex justify-end">
+          <RealTimeControls
+            isUpdating={isUpdating}
+            onPause={pause}
+            onResume={resume}
+            onForceUpdate={forceUpdate}
+            locale={locale}
+          />
+        </div>
+      )}
+
       {/* Basic Age Display */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-          {t.yourAge}
-        </h3>
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            {t.yourAge}
+          </h3>
+          {enableRealTime && (
+            <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+              <span className={`w-2 h-2 rounded-full mr-2 ${
+                isUpdating ? 'bg-green-500 animate-pulse' : 'bg-red-500'
+              }`}></span>
+              {isUpdating ? 'Živé' : 'Pozastaveno'}
+            </div>
+          )}
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
           <div className="bg-white dark:bg-gray-800 rounded-lg p-3">
             <div className="text-xl mb-1">🎂</div>
