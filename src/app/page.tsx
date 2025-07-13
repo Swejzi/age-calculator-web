@@ -1,103 +1,157 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import { AgeForm } from '@/components/AgeForm';
+import { AgeResults } from '@/components/AgeResults';
+import { IntervalForm } from '@/components/IntervalForm';
+import { IntervalResults } from '@/components/IntervalResults';
+import { AgeResult, IntervalResult } from '@/types/age';
+
+type CalculationType = 'age' | 'interval' | null;
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [calculationType, setCalculationType] = useState<CalculationType>(null);
+  const [ageResult, setAgeResult] = useState<AgeResult | null>(null);
+  const [intervalResult, setIntervalResult] = useState<IntervalResult | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const resetCalculation = () => {
+    setCalculationType(null);
+    setAgeResult(null);
+    setIntervalResult(null);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-8 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            ⏰ Age Calculator
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Zjistěte, jak dlouho jste na světě v různých jednotkách - od srdečních tepů po snězené pizzy!
+          </p>
+
+          {/* Back button when calculation type is selected */}
+          {calculationType && (
+            <button
+              type="button"
+              onClick={resetCalculation}
+              className="mt-6 inline-flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            >
+              ← Zpět na výběr
+            </button>
+          )}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Main Content */}
+        {!calculationType ? (
+          /* Choice Menu */
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-4">
+                Co chcete spočítat?
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400">
+                Vyberte si jednu z možností níže
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Age Calculation Option */}
+              <div
+                onClick={() => setCalculationType('age')}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-blue-500"
+              >
+                <div className="text-center">
+                  <div className="text-6xl mb-4">🎂</div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    Můj aktuální věk
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    Zadejte datum narození a zjistěte, jak dlouho jste na světě ve všech možných jednotkách.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+                    <p>✨ Roky, měsíce, týdny, dny, hodiny, minuty, sekundy</p>
+                    <p>💓 Srdeční tepy, nádechy, mrknutí</p>
+                    <p>🍕 Snězené pizzy, šálky kávy, viděné memy</p>
+                    <p>🌕 Úplňky, světelné roky, a mnoho dalšího</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Interval Calculation Option */}
+              <div
+                onClick={() => setCalculationType('interval')}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-green-500"
+              >
+                <div className="text-center">
+                  <div className="text-6xl mb-4">📅</div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    Libovolný interval
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    Zadejte počet jednotek a zjistěte, kdy od narození tento interval uplyne.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+                    <p>🎯 Kdy nastane 1 milion sekund od narození?</p>
+                    <p>🍕 Kdy sním svou 1000. pizzu?</p>
+                    <p>💓 Kdy mi bude bít srdce miliardtý tep?</p>
+                    <p>🌕 Kdy uvidím 500. úplněk?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : calculationType === 'age' ? (
+          /* Age Calculation Section */
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Age Form */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                🎂 Váš věk
+              </h2>
+              <AgeForm onResult={setAgeResult} />
+            </div>
+
+            {/* Age Results */}
+            {ageResult && (
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                  📊 Výsledky věku
+                </h2>
+                <AgeResults result={ageResult} />
+              </div>
+            )}
+          </div>
+        ) : (
+          /* Interval Calculation Section */
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Interval Form */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                📅 Libovolný interval
+              </h2>
+              <IntervalForm onResult={setIntervalResult} />
+            </div>
+
+            {/* Interval Results */}
+            {intervalResult && (
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                  🎯 Výsledky intervalu
+                </h2>
+                <IntervalResults result={intervalResult} />
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Footer */}
+        <div className="text-center mt-16 text-gray-500 dark:text-gray-400">
+          <p>Vytvořeno s ❤️ pro zábavu s časem</p>
+        </div>
+      </div>
     </div>
   );
 }

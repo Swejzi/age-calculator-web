@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⏰ Age Calculator - Kalkulačka věku
 
-## Getting Started
+Moderní webová aplikace pro výpočet věku v různých jednotkách - od standardních let a měsíců až po zábavné jednotky jako snězené pizzy, srdeční tepy nebo viděné memy!
 
-First, run the development server:
+## ✨ Funkce
+
+- **Intuitivní rozcestník** - Vyberte si, co chcete počítat s podrobným popisem funkcí
+- **Výpočet aktuálního věku** - Zadejte datum narození a zjistěte svůj přesný věk
+- **Libovolné intervaly** - Spočítejte, kdy nastane určitý počet jednotek od vašeho narození
+- **Různé kategorie jednotek**:
+  - 📅 **Základní**: sekundy, minuty, hodiny, dny, týdny, měsíce, roky
+  - 🫀 **Biologické**: srdeční tepy, nádechy, mrknutí, kroky
+  - 🌌 **Kosmické**: úplňky, světelné roky, otočky Země
+  - 🎭 **Kulturní**: Netflix epizody, TikTok videa, přečtené knihy
+  - 🎉 **Zábavné**: pizzy, káva, memy, smíchy
+- **Tmavý/světlý motiv** - Automatické přepínání podle systémových preferencí
+- **Responzivní design** - Funguje na všech zařízeních
+- **Moderní UI** - Čistý a intuitivní design s animacemi
+- **Vertikální zobrazení** - Výsledky jsou přehledně zobrazeny pod sebou
+- **Optimalizovaný layout** - Výsledky intervalů jsou hned vedle formuláře pro lepší přehlednost
+- **Celá čísla** - Zobrazení čísel s mezerami jako oddělovači tisíců (1 234 567 místo 1.2M)
+- **Uživatelsky přívětivé rozhraní** - Jasný rozcestník s popisem funkcí
+
+## 🚀 Rychlý start
+
+### Pomocí Makefile (doporučeno)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Nainstalujte závislosti
+make install
+
+# Spusťte vývojový server
+make dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pomocí npm
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Nainstalujte závislosti
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Spusťte vývojový server
+npm run dev
+```
 
-## Learn More
+Otevřete [http://localhost:3000](http://localhost:3000) v prohlížeči.
 
-To learn more about Next.js, take a look at the following resources:
+## 📋 Dostupné příkazy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+make help      # Zobrazí nápovědu
+make install   # Nainstaluje závislosti
+make dev       # Spustí vývojový server
+make build     # Sestaví produkční verzi
+make start     # Spustí produkční server
+make lint      # Zkontroluje kód
+make clean     # Vyčistí cache a build soubory
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Technologie
 
-## Deploy on Vercel
+- **Next.js 15** - React framework s App Router
+- **TypeScript** - Typová bezpečnost
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Hooks** - Moderní React patterns
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Struktura projektu
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── globals.css     # Globální styly
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Hlavní stránka
+├── components/         # React komponenty
+│   ├── AgeForm.tsx     # Formulář pro věk
+│   ├── AgeResults.tsx  # Výsledky věku
+│   ├── IntervalForm.tsx # Formulář pro interval
+│   └── IntervalResults.tsx # Výsledky intervalu
+├── types/              # TypeScript typy
+│   └── age.ts          # Typy pro věk a jednotky
+└── utils/              # Utility funkce
+    └── ageCalculations.ts # Výpočetní logika
+```
+
+## 🎯 Příklady použití
+
+### Rozcestník
+1. Na úvodní stránce si vyberte jednu ze dvou možností:
+   - **🎂 Můj aktuální věk** - pro výpočet současného věku
+   - **📅 Libovolný interval** - pro výpočet budoucích dat
+
+### Výpočet věku
+1. Vyberte "Můj aktuální věk" z rozcestníku
+2. Zadejte datum narození (a volitelně čas)
+3. Klikněte na "Spočítat věk"
+4. Uvidíte svůj věk ve všech jednotkách hned vedle formuláře
+
+### Výpočet intervalu
+1. Vyberte "Libovolný interval" z rozcestníku
+2. Zadejte datum narození
+3. Zadejte hodnotu a vyberte jednotku (např. "1000 pizzy")
+4. Klikněte na "Spočítat interval"
+5. Uvidíte, kdy tento interval nastane a jaký budete mít věk
+
+## 🌟 Unikátní jednotky
+
+Aplikace obsahuje mnoho zábavných jednotek:
+
+- **🍕 Pizzy snězené** (1 týdně)
+- **☕ Šálky kávy** (2 denně)
+- **😂 Viděné memy** (100 denně)
+- **🎮 Hodiny hraní her** (2 denně)
+- **📱 TikTok videa** (50 denně)
+- **💓 Srdeční tepy** (70/min)
+- **🫁 Nádechy** (16/min)
+- **🌕 Úplňky** (každých 29.53 dne)
+- **✨ Světelné roky** (vzdálenost světla)
+- A mnoho dalších!
+
+## 🎨 Design
+
+- **Automatický tmavý/světlý motiv** podle systémových preferencí
+- **Moderní gradientní pozadí**
+- **Animace a přechody** pro lepší UX
+- **Responzivní layout** pro všechna zařízení
+- **Přístupnost** s focus stavy a ARIA labely
+
+## 🤝 Přispívání
+
+Příspěvky jsou vítány! Pokud máte nápad na novou jednotku nebo vylepšení, neváhejte vytvořit issue nebo pull request.
+
+## 📄 Licence
+
+MIT License - viz LICENSE soubor pro detaily.
+
+---
+
+Vytvořeno s ❤️ pro zábavu s časem!
