@@ -1,6 +1,6 @@
 # Age Calculator - Makefile
 
-.PHONY: help install dev build start test lint clean
+.PHONY: help install dev build start test lint clean export
 
 # Default target
 help:
@@ -14,6 +14,7 @@ help:
 	@echo "  make test     - Spustí testy"
 	@echo "  make lint     - Zkontroluje kód"
 	@echo "  make clean    - Vyčistí cache a build soubory"
+	@echo "  make export   - Exportuje statické soubory pro Apache hosting"
 
 # Install dependencies
 install:
@@ -51,6 +52,13 @@ clean:
 	rm -rf .next
 	rm -rf node_modules/.cache
 	@echo "✅ Vyčištěno!"
+
+# Export static files for Apache hosting
+export:
+	@echo "📤 Exportuji statické soubory pro Apache hosting..."
+	npm run export
+	@echo "✅ Statické soubory jsou připraveny v ./out/"
+	@echo "📁 Zkopírujte obsah složky ./out/ na váš Apache server"
 
 # Quick setup for new environment
 setup: install
