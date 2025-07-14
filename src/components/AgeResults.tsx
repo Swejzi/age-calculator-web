@@ -26,7 +26,7 @@ const unitNames = {
     supernova_events: 'Supernovy', cosmic_background_shifts: 'Posun kosmického pozadí', neutron_star_pulses: 'Pulzy neutronových hvězd',
     black_hole_orbits: 'Orbity černých děr', voyager_distance: 'Vzdálenost Voyageru', iss_orbits: 'Orbity ISS',
     // Fun units
-    pizzas: 'Pizzy snězené', coffee_cups: 'Šálky kávy', netflix_episodes: 'Netflix epizody', tiktok_videos: 'TikTok videa',
+    pizzas: 'Pizzy snězené', coffee_cups: 'Šálky kávy', beers_drunk: 'Vypitá piva', netflix_episodes: 'Netflix epizody', tiktok_videos: 'TikTok videa',
     books_read: 'Přečtené knihy', songs_listened: 'Poslechnuté písně', memes_seen: 'Viděné memy', instagram_posts: 'Instagram posty',
     video_games_hours: 'Hodiny hraní her', toilet_visits: 'Návštěvy WC', laughs: 'Smíchy'
   },
@@ -43,7 +43,7 @@ const unitNames = {
     supernova_events: 'Supernova events', cosmic_background_shifts: 'Cosmic background shifts', neutron_star_pulses: 'Neutron star pulses',
     black_hole_orbits: 'Black hole orbits', voyager_distance: 'Voyager distances', iss_orbits: 'ISS orbits',
     // Fun units
-    pizzas: 'Pizzas eaten', coffee_cups: 'Coffee cups', netflix_episodes: 'Netflix episodes', tiktok_videos: 'TikTok videos',
+    pizzas: 'Pizzas eaten', coffee_cups: 'Coffee cups', beers_drunk: 'Beers drunk', netflix_episodes: 'Netflix episodes', tiktok_videos: 'TikTok videos',
     books_read: 'Books read', songs_listened: 'Songs listened', memes_seen: 'Memes seen', instagram_posts: 'Instagram posts',
     video_games_hours: 'Gaming hours', toilet_visits: 'Toilet visits', laughs: 'Laughs'
   },
@@ -60,7 +60,7 @@ const unitNames = {
     supernova_events: 'Supernova-Ereignisse', cosmic_background_shifts: 'Kosmische Hintergrundverschiebungen', neutron_star_pulses: 'Neutronenstern-Pulse',
     black_hole_orbits: 'Schwarze-Loch-Orbits', voyager_distance: 'Voyager-Entfernungen', iss_orbits: 'ISS-Orbits',
     // Fun units
-    pizzas: 'Gegessene Pizzas', coffee_cups: 'Kaffeetassen', netflix_episodes: 'Netflix-Episoden', tiktok_videos: 'TikTok-Videos',
+    pizzas: 'Gegessene Pizzas', coffee_cups: 'Kaffeetassen', beers_drunk: 'Getrunkene Biere', netflix_episodes: 'Netflix-Episoden', tiktok_videos: 'TikTok-Videos',
     books_read: 'Gelesene Bücher', songs_listened: 'Gehörte Lieder', memes_seen: 'Gesehene Memes', instagram_posts: 'Instagram-Posts',
     video_games_hours: 'Spielstunden', toilet_visits: 'Toilettenbesuche', laughs: 'Lachen'
   },
@@ -77,7 +77,7 @@ const unitNames = {
     supernova_events: '超新星爆発', cosmic_background_shifts: '宇宙背景放射の変化', neutron_star_pulses: '中性子星パルス',
     black_hole_orbits: 'ブラックホール軌道', voyager_distance: 'ボイジャーの距離', iss_orbits: 'ISS軌道',
     // Fun units
-    pizzas: '食べたピザ', coffee_cups: 'コーヒーカップ', netflix_episodes: 'Netflixエピソード', tiktok_videos: 'TikTok動画',
+    pizzas: '食べたピザ', coffee_cups: 'コーヒーカップ', beers_drunk: '飲んだビール', netflix_episodes: 'Netflixエピソード', tiktok_videos: 'TikTok動画',
     books_read: '読んだ本', songs_listened: '聞いた歌', memes_seen: '見たミーム', instagram_posts: 'Instagramの投稿',
     video_games_hours: 'ゲーム時間', toilet_visits: 'トイレ訪問', laughs: '笑い'
   }
@@ -98,7 +98,7 @@ const unitDescriptions = {
     supernova_events: 'Supernovy v galaxii (každých 50 let)', cosmic_background_shifts: 'Expanze vesmíru (13.8 mld. let)', neutron_star_pulses: 'Pulzy neutronových hvězd',
     black_hole_orbits: 'Orbita kolem Sgr A* (16 let)', voyager_distance: 'Cesta Voyageru 1 (denně)', iss_orbits: 'Orbity ISS (90 minut)',
     // Fun units
-    pizzas: '1 pizza týdně', coffee_cups: '2 šálky denně', netflix_episodes: '45min epizoda denně', tiktok_videos: '30s video, 50 denně',
+    pizzas: '1 pizza týdně', coffee_cups: '2 šálky denně', beers_drunk: 'Český průměr: 188,5L ročně (0,5L lahve)', netflix_episodes: '45min epizoda denně', tiktok_videos: '30s video, 50 denně',
     books_read: '1 kniha za měsíc', songs_listened: '3min píseň, 20 denně', memes_seen: '100 memů denně', instagram_posts: '1 post za 3 dny',
     video_games_hours: '2 hodiny denně', toilet_visits: '6 návštěv denně', laughs: '15 smíchů denně'
   },
@@ -115,7 +115,7 @@ const unitDescriptions = {
     supernova_events: 'Supernovas in galaxy (every 50 years)', cosmic_background_shifts: 'Universe expansion (13.8 billion years)', neutron_star_pulses: 'Neutron star pulses',
     black_hole_orbits: 'Orbit around Sgr A* (16 years)', voyager_distance: 'Voyager 1 journey (daily)', iss_orbits: 'ISS orbits (90 minutes)',
     // Fun units
-    pizzas: '1 pizza per week', coffee_cups: '2 cups daily', netflix_episodes: '45min episode daily', tiktok_videos: '30s video, 50 daily',
+    pizzas: '1 pizza per week', coffee_cups: '2 cups daily', beers_drunk: 'Czech average: 188.5L yearly (0.5L bottles)', netflix_episodes: '45min episode daily', tiktok_videos: '30s video, 50 daily',
     books_read: '1 book per month', songs_listened: '3min song, 20 daily', memes_seen: '100 memes daily', instagram_posts: '1 post per 3 days',
     video_games_hours: '2 hours daily', toilet_visits: '6 visits daily', laughs: '15 laughs daily'
   },
@@ -123,7 +123,7 @@ const unitDescriptions = {
     seconds: 'Zeiteinheiten (1/86400 eines Tages)', minutes: 'Zeiteinheiten (1/1440 eines Tages)', hours: 'Zeiteinheiten (1/24 eines Tages)', days: 'Standardtage', weeks: '7-Tage-Perioden', months: 'Durchschnittlicher Monat (30,44 Tage)', years: 'Kalenderjahre',
     heartbeats: '70 Schläge pro Minute', breaths: '16 Atemzüge pro Minute', blinks: '15 Blinzeln pro Minute', steps: '8000 Schritte täglich', yawns: '8 Gähnen pro Tag',
     moon_cycles: 'Mondzyklen (29,53 Tage)', light_distance: 'Entfernung des Lichts in einem Jahr', earth_rotations: 'Erdrotation um die Achse',
-    pizzas: '1 Pizza pro Woche', coffee_cups: '2 Tassen täglich', netflix_episodes: '45min Episode täglich', tiktok_videos: '30s Video, 50 täglich',
+    pizzas: '1 Pizza pro Woche', coffee_cups: '2 Tassen täglich', beers_drunk: 'Tschechischer Durchschnitt: 188,5L jährlich (0,5L Flaschen)', netflix_episodes: '45min Episode täglich', tiktok_videos: '30s Video, 50 täglich',
     books_read: '1 Buch pro Monat', songs_listened: '3min Lied, 20 täglich', memes_seen: '100 Memes täglich', instagram_posts: '1 Post alle 3 Tage',
     video_games_hours: '2 Stunden täglich', toilet_visits: '6 Besuche täglich', laughs: '15 Lachen täglich'
   },
@@ -131,7 +131,7 @@ const unitDescriptions = {
     seconds: '時間単位（1日の1/86400）', minutes: '時間単位（1日の1/1440）', hours: '時間単位（1日の1/24）', days: '標準日', weeks: '7日間', months: '平均月（30.44日）', years: 'カレンダー年',
     heartbeats: '毎分70回', breaths: '毎分16回', blinks: '毎分15回', steps: '1日8000歩', yawns: '1日8回',
     moon_cycles: '月の周期（29.53日）', light_distance: '光が1年で進む距離', earth_rotations: '地球の軸周りの回転',
-    pizzas: '週1枚', coffee_cups: '1日2杯', netflix_episodes: '1日45分エピソード', tiktok_videos: '30秒動画、1日50本',
+    pizzas: '週1枚', coffee_cups: '1日2杯', beers_drunk: 'チェコ平均：年間188.5L（0.5Lボトル）', netflix_episodes: '1日45分エピソード', tiktok_videos: '30秒動画、1日50本',
     books_read: '月1冊', songs_listened: '3分の歌、1日20曲', memes_seen: '1日100個のミーム', instagram_posts: '3日に1投稿',
     video_games_hours: '1日2時間', toilet_visits: '1日6回', laughs: '1日15回'
   }

@@ -356,6 +356,14 @@ export const TIME_UNITS: TimeUnit[] = [
     icon: '☕'
   },
   {
+    id: 'beers_drunk',
+    name: 'Beers drunk',
+    description: 'Czech average: 188.5L per year (0.5L bottles)',
+    category: 'cultural',
+    conversionToDays: 365.25 / 377, // 188.5L ÷ 0.5L = 377 beers per year
+    icon: '🍺'
+  },
+  {
     id: 'netflix_episodes',
     name: 'Netflix episodes',
     description: '45min episode daily',

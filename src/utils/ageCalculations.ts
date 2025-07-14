@@ -182,6 +182,11 @@ export function calculateSpecialUnits(totalDays: number, locale: string = 'cs'):
       case 'coffee_cups':
         value = totalDays * 2; // 2 cups per day
         break;
+      case 'beers_drunk':
+        // Czech average: 188.5L per year = 377 beers (0.5L bottles) per year
+        // 377 beers ÷ 365.25 days = ~1.032 beers per day
+        value = totalDays * (377 / 365.25);
+        break;
       case 'tiktok_videos':
         value = totalDays * 50; // 50 videos per day
         break;
@@ -274,6 +279,9 @@ export function calculateIntervalResult(
       break;
     case 'coffee_cups':
       intervalDays = intervalValue / 2;
+      break;
+    case 'beers_drunk':
+      intervalDays = intervalValue / (377 / 365.25); // Convert beers to days
       break;
     case 'tiktok_videos':
       intervalDays = intervalValue / 50;
