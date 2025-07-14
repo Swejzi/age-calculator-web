@@ -81,6 +81,69 @@ export function formatLargeNumber(num: number, locale: string = 'cs'): string {
 }
 
 /**
+ * Smart number formatting with decimal places for small numbers and abbreviations for very large numbers
+ */
+export function formatSmartNumber(num: number, unitId: string, locale: string = 'cs'): string {
+  const localeMap: Record<string, string> = {
+    'cs': 'cs-CZ',
+    'en': 'en-US',
+    'de': 'de-DE',
+    'ja': 'ja-JP'
+  };
+
+  const browserLocale = localeMap[locale] || locale;
+
+  // Planetary years should show 1-2 decimal places for better precision
+  const planetaryUnits = [
+    'mercury_years', 'venus_years', 'mars_years', 'jupiter_years',
+    'saturn_years', 'uranus_years', 'neptune_years', 'pluto_years'
+  ];
+
+  if (planetaryUnits.includes(unitId)) {
+    // For planetary years, show 1-2 decimal places
+    if (num < 1) {
+      return num.toLocaleString(browserLocale, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    } else if (num < 10) {
+      return num.toLocaleString(browserLocale, {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      });
+    } else {
+      return num.toLocaleString(browserLocale, {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      });
+    }
+  }
+
+  // For very large numbers (12+ digits), use abbreviations
+  if (num >= 1e12) {
+    const abbreviations = {
+      'cs': { trillion: 'bil.', quadrillion: 'biliarda', quintillion: 'trilion' },
+      'en': { trillion: 'T', quadrillion: 'Q', quintillion: 'Qi' },
+      'de': { trillion: 'Bio.', quadrillion: 'Brd.', quintillion: 'Trl.' },
+      'ja': { trillion: '兆', quadrillion: '京', quintillion: '垓' }
+    };
+
+    const abbrev = abbreviations[locale as keyof typeof abbreviations] || abbreviations.en;
+
+    if (num >= 1e18) {
+      return `${(num / 1e18).toLocaleString(browserLocale, { maximumFractionDigits: 1 })} ${abbrev.quintillion}`;
+    } else if (num >= 1e15) {
+      return `${(num / 1e15).toLocaleString(browserLocale, { maximumFractionDigits: 1 })} ${abbrev.quadrillion}`;
+    } else {
+      return `${(num / 1e12).toLocaleString(browserLocale, { maximumFractionDigits: 1 })} ${abbrev.trillion}`;
+    }
+  }
+
+  // For regular numbers, use standard formatting
+  return Math.floor(num).toLocaleString(browserLocale);
+}
+
+/**
  * Calculate special units for a given time period
  */
 export function calculateSpecialUnits(totalDays: number, locale: string = 'cs'): SpecialUnitCalculation[] {
@@ -150,8 +213,8 @@ export function calculateSpecialUnits(totalDays: number, locale: string = 'cs'):
       unit,
       value,
       formattedValue: unit.id === 'light_distance'
-        ? `${formatLargeNumber(value, locale)} km`
-        : formatLargeNumber(value, locale)
+        ? `${formatSmartNumber(value, unit.id, locale)} km`
+        : formatSmartNumber(value, unit.id, locale)
     };
   });
 }
