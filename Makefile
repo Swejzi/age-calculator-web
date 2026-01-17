@@ -10,6 +10,7 @@ help:
 	@echo "  make install  - Nainstaluje závislosti"
 	@echo "  make dev      - Spustí vývojový server"
 	@echo "  make build    - Sestaví produkční verzi"
+	@echo "  make export   - Vygeneruje statické soubory pro Apache"
 	@echo "  make start    - Spustí produkční server"
 	@echo "  make test     - Spustí testy"
 	@echo "  make lint     - Zkontroluje kód"
@@ -30,6 +31,12 @@ dev:
 build:
 	@echo "🏗️ Sestavuji produkční verzi..."
 	npm run build
+
+# Export static files for Apache
+export: build
+	@echo "📦 Generuji statické soubory pro Apache..."
+	@echo "✅ Statické soubory jsou v adresáři 'out/'"
+	@echo "📁 Nahrajte obsah 'out/' adresáře na váš Apache server"
 
 # Start production server
 start: build
